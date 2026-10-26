@@ -1,0 +1,53 @@
+# Ames Housing Price Analysis: What Drives Sale Price?
+
+Exploratory data analysis of home sales in Ames, Iowa, to find which property characteristics have the strongest effect on sale price.
+
+## Business Questions
+1. What is the goal of the analysis?
+2. Which categorical and continuous variables influence property prices the most?
+3. Are there outliers, and how is sale price distributed?
+4. Which amenities add the most value to a property?
+5. How does the age of a property affect sale price, and is renovation valuable?
+
+## Dataset
+Ames Housing data, with 81 features per property (for example `SalePrice`, `GrLivArea`, `OverallQual`, `Neighborhood`, `YearBuilt`).
+
+| File | Rows | Columns |
+|---|---|---|
+| `Ames_Housing_South.csv` | 380 | 81 |
+
+The same analysis was applied to the North dataset. The data files are not included here, so add them next to the notebook.
+
+## Tools
+Python, Pandas, NumPy, Matplotlib, Seaborn, Jupyter Notebook
+
+## Approach
+1. Explored the structure, shape, and data types of the data.
+2. Handled missing values (dropped columns with more than 30% missing values).
+3. Separated categorical and continuous variables.
+4. Detected outliers in `SalePrice` with the IQR method (14 rows removed in the South dataset).
+5. Used a correlation heatmap for continuous variables and box plots for categorical variables.
+6. Answered each business question with visualizations.
+
+## Key Findings
+- Above-ground living area (`GrLivArea`), overall quality (`OverallQual`), and total basement area (`TotalBsmtSF`) show the strongest positive correlation with sale price.
+- Neighborhood matters: Northridge and Somerset sell higher, while Brookside and Edwards sell lower.
+- Single-family homes and properties built after 2000 sell for more, and remodeled older homes recover value.
+- Central air conditioning, attached garages, and quality exterior finishes are linked to higher prices.
+
+## Limitations
+- This project is exploratory analysis only. It does not train a price prediction model.
+- The South dataset is small (380 rows), so findings should be confirmed on larger data.
+- The findings show association, not cause.
+
+## Next Steps
+- Build a regression model (linear regression, random forest) to predict sale price and evaluate it with R² and RMSE.
+
+## How to Run
+1. Install the libraries: `pip install pandas numpy matplotlib seaborn jupyter`
+2. Place the Ames CSV files in the project folder.
+3. In `NehaSprint.ipynb`, change the file path in the data-loading cell to your local path (the notebook currently uses a path from the original computer).
+4. Run all cells.
+
+## Author
+**MP Neha** | [LinkedIn](https://linkedin.com/in/neha-mp) | [GitHub](https://github.com/NEHAmp4) | mpneha313@gmail.com

@@ -1,0 +1,48 @@
+# IMDb Movie Ratings Analysis (SQL)
+
+Answers 29 business questions on a movie database using MySQL, covering data quality checks, ratings analysis, and the performance of genres, directors, actors, and production houses.
+
+## Dataset
+An IMDb-style database named `imdb` with six related tables:
+
+| Table | Contains |
+|---|---|
+| `movie` | Title, year, release date, duration, country, languages, production company, worldwide gross income |
+| `ratings` | Average rating, total votes, median rating per movie |
+| `genre` | Genre(s) of each movie |
+| `director_mapping` | Which director made which movie |
+| `role_mapping` | Which actor or actress appeared in which movie |
+| `names` | Names of directors and actors |
+
+The database itself is not included in this repository. Load it into MySQL before running the queries.
+
+## Tools
+MySQL
+
+## SQL Techniques Used
+- INNER and LEFT JOINs across up to five tables
+- CTEs (`WITH` clauses) to break complex questions into steps
+- Window functions: `RANK`, `DENSE_RANK`, `ROW_NUMBER`, `LEAD`, and running totals with moving averages
+- `CASE` expressions for conditional counts and rating categories
+- Aggregations, weighted averages, and date functions (`MONTH`, `DATEDIFF`)
+
+## What the Queries Cover
+The solution file is organized into segments:
+
+1. **Data quality and volume:** row counts and null checks per table, movies released per year and per month, and movies produced in the USA or India in 2019.
+2. **Ratings analysis:** top movies by average rating, rating summaries, hit movies by production house, and comparisons such as German versus Italian movies by votes.
+3. **Names and rankings:** top directors, actors, and actresses by genre and rating, and the top production houses by votes.
+4. **Advanced analysis:** thriller movies classified by rating, genre-wise running totals and moving averages, top-grossing movies per year, and director statistics including the average days between their movies.
+
+## Selected Findings
+- March is the month with the most movie releases.
+- Marvel Studios ranks first among production houses by total votes.
+- Vijay Sethupathi ranks first among actors in Indian movies by average rating.
+
+## How to Run
+1. Load the `imdb` database into MySQL.
+2. Open `final_solution.sql` in MySQL Workbench (or any MySQL client).
+3. Run the queries question by question. Each question is labeled (Q1 to Q29) in the comments.
+
+## Author
+**MP Neha** | [LinkedIn](https://linkedin.com/in/neha-mp) | [GitHub](https://github.com/NEHAmp4) | mpneha313@gmail.com
